@@ -29,6 +29,10 @@ app.get('/api/news', async (req, res) => {
       params.country = 'us';
     }
 
+    console.log('Using API Key:', process.env.NEWS_API_KEY ? 'YES' : 'NO');
+    console.log('Request URL:', url);
+    console.log('Request Params:', params);
+
     const response = await axios.get(url, { params });
     res.json(response.data);
 
